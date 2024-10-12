@@ -3,9 +3,9 @@ services:
     container_name: pwpa_message_bus
     image: rabbitmq:management
     hostname: 'pwpamessagebus'
-    # environment: ## N/A - it initiates in definitions.json
-    #   RABBITMQ_DEFAULT_USER: ${RABBIT_USER}
-    #   RABBITMQ_DEFAULT_PASS: ${RABBIT_PASS}
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBIT_USER}
+      RABBITMQ_DEFAULT_PASS: ${RABBIT_PASS}
     ports:
       - 8005:15672
       - 8006:5672
